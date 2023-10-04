@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "设置用户 chrono 为 ${UID}:${GID}"
+usermod -o -u ${UID} chrono
+groupmod -o -g ${GID} chrono || true
+usermod -g ${GID} chrono
+
+echo "设置 UMASK 为 ${UMASK}"
+umask ${UMASK}
+
+echo "设置用户文件夹所有者"
+chown -R ${UID}:${GID} /chrono /llqqnt
