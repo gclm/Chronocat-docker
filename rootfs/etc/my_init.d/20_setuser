@@ -1,19 +1,15 @@
 #!/bin/sh
 
-export UID=911
-export GID=1000
-export UMASK=002
+echo "设置用户 chrono 为 ${CHRONO_UID}:${CHRONO_GID}"
+usermod -o -u ${CHRONO_UID} chrono
+groupmod -o -g ${CHRONO_GID} chrono || true
+usermod -g ${CHRONO_GID} chrono
 
-echo "设置用户 chrono 为 ${UID}:${GID}"
-usermod -o -u ${UID} chrono
-groupmod -o -g ${GID} chrono || true
-usermod -g ${GID} chrono
-
-echo "设置 UMASK 为 ${UMASK}"
-umask ${UMASK}
+echo "设置 UMASK 为 ${CHRONO_UMASK}"
+umask ${CHRONO_UMASK}
 
 echo "设置用户文件夹所有者"
-chown -R ${UID}:${GID} /chrono /llqqnt
+chown -R ${CHRONO_UID}:${CHRONO_GID} /chrono /llqqnt
 
 echo "设置用户文件夹权限"
 chown -R 755 /chrono /llqqnt
