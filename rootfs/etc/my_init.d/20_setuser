@@ -10,3 +10,6 @@ umask ${UMASK}
 
 echo "设置用户文件夹所有者"
 chown -R ${UID}:${GID} /chrono /llqqnt
+
+echo "设置用户文件夹权限"
+chown -R 755 /chrono /llqqnt
