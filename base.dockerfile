@@ -2,7 +2,7 @@
 
 FROM phusion/baseimage:jammy-1.0.1
 
-ARG BUILD_ARCH
+ARG TARGETARCH
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -16,7 +16,7 @@ RUN apt update && \
   xorg xvfb openbox python3-xdg python3-numpy && \
   \
   # 下载 QQNT
-  curl -fsSLo /tmp/qqnt.deb https://dldir1.qq.com/qqfile/qq/QQNT/ad5b5393/linuxqq_3.1.2-13107_${BUILD_ARCH}.deb && \
+  curl -fsSLo /tmp/qqnt.deb https://dldir1.qq.com/qqfile/qq/QQNT/ad5b5393/linuxqq_3.1.2-13107_${TARGETARCH}.deb && \
   apt install -y /tmp/qqnt.deb && \
   \
   # 下载 LiteLoaderQQNT

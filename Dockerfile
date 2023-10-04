@@ -1,6 +1,9 @@
-ARG BUILD_BASE_VERSION
-FROM ghcr.io/chrononeko/base:${BUILD_BASE_VERSION}-linux-amd64
+# syntax=docker/dockerfile:1
 
+ARG BUILD_BASE_VERSION
+FROM ghcr.io/chrononeko/base:${BUILD_BASE_VERSION}
+
+ARG TARGETARCH
 ARG BUILD_CHRONO_VERSION
 ARG BUILD_CHRONO_CLI_VERSION
 
@@ -21,7 +24,7 @@ RUN \
   \
   # 下载 Chronocat CLI
   curl -fsSLo /opt/chronocat \
-  https://github.com/chrononeko/cli/releases/download/v${BUILD_CHRONO_CLI_VERSION}/chronocat-$([ TARGETARCH == "amd64"] && echo "x86_64" || echo "aarch64")-unknown-linux-gnu-v${BUILD_CHRONO_CLI_VERSION} && \
+  https://github.com/chrononeko/cli/releases/download/v${BUILD_CHRONO_CLI_VERSION}/chronocat-$([ ${TARGETARCH} == "amd64"] && echo "x86_64" || echo "aarch64")-unknown-linux-gnu-v${BUILD_CHRONO_CLI_VERSION} && \
   \
   # 创建 chrono 用户
   mkdir -p /chrono && \
