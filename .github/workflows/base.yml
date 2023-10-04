@@ -6,7 +6,7 @@ on:
       - .github/workflows/base.yml
       - build-base.sh
       - base.dockerfile
-      - rootfs
+      - rootfs/**/*
   pull_request:
   workflow_dispatch:
 
