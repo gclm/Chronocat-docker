@@ -1,5 +1,9 @@
 #!/bin/sh
 
+UID=911
+GID=1000
+UMASK=002
+
 echo "设置用户 chrono 为 ${UID}:${GID}"
 usermod -o -u ${UID} chrono
 groupmod -o -g ${GID} chrono || true

@@ -8,9 +8,6 @@ ARG BUILD_CHRONO_VERSION
 ARG BUILD_CHRONO_CLI_VERSION
 
 ENV DEBIAN_FRONTEND=noninteractive \
-  UID=911 \
-  GID=1000 \
-  UMASK=002 \
   CHRONO_ADMIN_LISTEN=0.0.0.0:16340
 
 RUN \
@@ -25,6 +22,7 @@ RUN \
   # 下载 Chronocat CLI
   curl -fsSLo /opt/chronocat \
   https://github.com/chrononeko/cli/releases/download/v${BUILD_CHRONO_CLI_VERSION}/chronocat-$([ "${TARGETARCH}" == "amd64" ] && echo "x86_64" || echo "aarch64")-unknown-linux-gnu-v${BUILD_CHRONO_CLI_VERSION} && \
+  chmod +x /opt/chronocat && \
   \
   # 创建 chrono 用户
   mkdir -p /chrono && \
