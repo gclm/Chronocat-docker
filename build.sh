@@ -18,7 +18,7 @@ BUILD_IMAGE_TAG=${BUILD_TAG}-up${BUILD_CHRONO_VERSION}
 
 case ${BUILD_MODE} in
   "push")
-    if [ "$BUILD_TAG" = "$BUILD_AUTO_TAG"]
+    if [ "$BUILD_TAG" = "$BUILD_AUTO_TAG" ]
     then
       # 未给定构建 Tag，进行普通构建
       docker buildx build \
