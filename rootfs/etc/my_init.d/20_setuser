@@ -1,8 +1,8 @@
 #!/bin/sh
 
-UID=911
-GID=1000
-UMASK=002
+export UID=911
+export GID=1000
+export UMASK=002
 
 echo "设置用户 chrono 为 ${UID}:${GID}"
 usermod -o -u ${UID} chrono
