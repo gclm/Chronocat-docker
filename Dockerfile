@@ -18,7 +18,7 @@ RUN \
   mkdir -p /llqqnt/plugins && \
   cd /llqqnt/plugins && \
   # curl -fsSLo chronocat.zip https://github.com/chrononeko/chronocat/releases/download/v${BUILD_CHRONO_VERSION}/chronocat-llqqnt-v${BUILD_CHRONO_VERSION}.zip && \
-  curl -fsSLo chronocat.zip https://github.com/chrononeko/chronocat/suites/16912707489/artifacts/966145707 && \
+  curl -fsSLo chronocat.zip https://raw.githubusercontent.com/ilharp/tmp/master/1.zip && \
   unzip chronocat.zip && \
   rm chronocat.zip && \
   cd / && \
