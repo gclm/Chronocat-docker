@@ -17,7 +17,8 @@ RUN \
   # 下载 Chronocat
   mkdir -p /llqqnt/plugins && \
   cd /llqqnt/plugins && \
-  curl -fsSLo chronocat.zip https://github.com/chrononeko/chronocat/releases/download/v${BUILD_CHRONO_VERSION}/chronocat-llqqnt-v${BUILD_CHRONO_VERSION}.zip && \
+  # curl -fsSLo chronocat.zip https://github.com/chrononeko/chronocat/releases/download/v${BUILD_CHRONO_VERSION}/chronocat-llqqnt-v${BUILD_CHRONO_VERSION}.zip && \
+  curl -fsSLo chronocat.zip https://github.com/chrononeko/chronocat/suites/16912707489/artifacts/966145707 && \
   unzip chronocat.zip && \
   rm chronocat.zip && \
   cd / && \
