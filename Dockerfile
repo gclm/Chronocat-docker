@@ -22,11 +22,6 @@ RUN \
   rm chronocat.zip && \
   cd / && \
   \
-  # 下载 Chronocat CLI
-  curl -fsSLo /opt/chronocat \
-  https://github.com/chrononeko/cli/releases/download/v${BUILD_CHRONO_CLI_VERSION}/chronocat-$([ "${TARGETARCH}" == "amd64" ] && echo "x86_64" || echo "aarch64")-unknown-linux-gnu-v${BUILD_CHRONO_CLI_VERSION} && \
-  chmod +x /opt/chronocat && \
-  \
   # 创建 chrono 用户
   mkdir -p /chrono && \
   useradd --no-log-init -d /chrono chrono && \
