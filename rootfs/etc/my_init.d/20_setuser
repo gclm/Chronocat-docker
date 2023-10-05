@@ -1,9 +1,9 @@
 #!/bin/sh
 
-echo "设置用户 chrono 为 ${CHRONO_UID}:${CHRONO_GID}"
-usermod -o -u ${CHRONO_UID} chrono
-groupmod -o -g ${CHRONO_GID} chrono || true
-usermod -g ${CHRONO_GID} chrono
+echo "设置用户 chronocat 为 ${CHRONO_UID}:${CHRONO_GID}"
+usermod -o -u ${CHRONO_UID} chronocat
+groupmod -o -g ${CHRONO_GID} chronocat || true
+usermod -g ${CHRONO_GID} chronocat
 
 echo "设置 UMASK 为 ${CHRONO_UMASK}"
 umask ${CHRONO_UMASK}

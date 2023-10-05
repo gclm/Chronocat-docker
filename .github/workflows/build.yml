@@ -7,6 +7,7 @@ on:
       - build.sh
       - config.sh
       - Dockerfile
+      - rootfs/**/*
   pull_request:
   workflow_dispatch:
 

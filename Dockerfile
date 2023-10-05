@@ -13,6 +13,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
   CHRONO_UMASK=002 \
   CHRONO_ADMIN_LISTEN=0.0.0.0:16340
 
+COPY --chmod=0755 rootfs /
+
 RUN \
   # 下载 Chronocat
   mkdir -p /llqqnt/plugins && \
@@ -23,9 +25,9 @@ RUN \
   rm chronocat.zip && \
   cd / && \
   \
-  # 创建 chrono 用户
-  mkdir -p /chrono && \
-  useradd --no-log-init -d /chrono chrono && \
+  # 创建 chronocat 用户
+  mkdir -p /chronocat && \
+  useradd --no-log-init -d /chrono chronocat && \
   \
   # 清理
   # apt purge -y wget &&
@@ -35,3 +37,12 @@ RUN \
   /var/lib/apt/lists/* \
   /tmp/* \
   /var/tmp/*
+
+# Chronocat Red
+EXPOSE 16530/tcp
+
+# Chronocat Satori
+EXPOSE 5500/tcp
+
+# Chronocat Admin
+EXPOSE 16340/tcp

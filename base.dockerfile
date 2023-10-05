@@ -6,14 +6,13 @@ ARG TARGETARCH
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-COPY --chmod=0755 rootfs /
-
 RUN apt update && \
   \
   # 安装依赖
   apt install -y \
   unzip \
-  xorg xvfb openbox python3-xdg python3-numpy && \
+  xorg xvfb x11-apps netpbm openbox \
+  python3-xdg python3-numpy && \
   \
   # 下载 QQNT
   curl -fsSLo /tmp/qqnt.deb https://dldir1.qq.com/qqfile/qq/QQNT/ad5b5393/linuxqq_3.1.2-13107_${TARGETARCH}.deb && \
@@ -35,12 +34,3 @@ RUN apt update && \
   /var/lib/apt/lists/* \
   /tmp/* \
   /var/tmp/*
-
-# Chronocat Red
-EXPOSE 16530/tcp
-
-# Chronocat Satori
-EXPOSE 5500/tcp
-
-# Chronocat Admin
-EXPOSE 16340/tcp

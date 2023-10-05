@@ -2,4 +2,4 @@
 
 sleep 2
 
-/sbin/setuser chrono /usr/bin/openbox-session
+/sbin/setuser chronocat /usr/bin/openbox-session
