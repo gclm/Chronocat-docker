@@ -2,4 +2,4 @@
 
 sleep 4
 
-/sbin/setuser chronocat /opt/QQ/qq --disable-software-rasterizer --disable-gpu --chrono-mode=headless2 -chrono-admin-listen=0.0.0.0:16340
+/sbin/setuser chronocat /opt/QQ/qq --disable-software-rasterizer --disable-gpu --chrono-mode=headless3 -chrono-admin-listen=0.0.0.0:16340
