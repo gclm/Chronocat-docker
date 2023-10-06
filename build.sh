@@ -14,8 +14,6 @@ BUILD_PLATFORM=linux/amd64,linux/arm64
 
 echo "Building chronoc/at:${BUILD_TAG} using builder: ${BUILD_DOCKER_BUILDER}\n\n"
 
-BUILD_IMAGE_TAG=${BUILD_TAG}-up${BUILD_CHRONO_VERSION}
-
 case ${BUILD_MODE} in
   "push")
     if [ "$BUILD_TAG" = "$BUILD_AUTO_TAG" ]
@@ -28,8 +26,8 @@ case ${BUILD_MODE} in
         --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
         --build-arg BUILD_CHRONO_CLI_VERSION=${BUILD_CHRONO_CLI_VERSION} \
         --platform ${BUILD_PLATFORM} \
-        -t ghcr.io/chrononeko/chronocat:${BUILD_IMAGE_TAG} \
-        -t chronoc/at:${BUILD_IMAGE_TAG} \
+        -t ghcr.io/chrononeko/chronocat:${BUILD_TAG} \
+        -t chronoc/at:${BUILD_TAG} \
         .
     else
       # 使用给定 Tag 进行构建，同时构建 latest 版本
@@ -40,9 +38,9 @@ case ${BUILD_MODE} in
         --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
         --build-arg BUILD_CHRONO_CLI_VERSION=${BUILD_CHRONO_CLI_VERSION} \
         --platform ${BUILD_PLATFORM} \
-        -t ghcr.io/chrononeko/chronocat:${BUILD_IMAGE_TAG} \
+        -t ghcr.io/chrononeko/chronocat:${BUILD_TAG} \
         -t ghcr.io/chrononeko/chronocat:latest \
-        -t chronoc/at:${BUILD_IMAGE_TAG} \
+        -t chronoc/at:${BUILD_TAG} \
         -t chronoc/at:latest \
         .
     fi
@@ -54,7 +52,7 @@ case ${BUILD_MODE} in
       --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
       --build-arg BUILD_CHRONO_CLI_VERSION=${BUILD_CHRONO_CLI_VERSION} \
       --platform ${BUILD_PLATFORM} \
-      -t chronoc/at:${BUILD_IMAGE_TAG} \
+      -t chronoc/at:${BUILD_TAG} \
       .
     ;;
 esac
