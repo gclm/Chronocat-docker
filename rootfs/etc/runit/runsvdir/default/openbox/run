@@ -1,5 +1,5 @@
 #!/bin/sh
 
-sleep 2
+sleep 1
 
 /sbin/setuser chronocat /usr/bin/openbox-session

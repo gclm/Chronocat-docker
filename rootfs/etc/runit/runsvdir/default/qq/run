@@ -1,5 +1,5 @@
 #!/bin/sh
 
-sleep 4
+sleep 2
 
 /sbin/setuser chronocat /opt/QQ/qq --disable-software-rasterizer --disable-gpu --chrono-mode=headless3 -chrono-admin-listen=0.0.0.0:16340
