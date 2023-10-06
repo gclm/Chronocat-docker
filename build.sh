@@ -54,7 +54,6 @@ case ${BUILD_MODE} in
       --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
       --build-arg BUILD_CHRONO_CLI_VERSION=${BUILD_CHRONO_CLI_VERSION} \
       --platform ${BUILD_PLATFORM} \
-      -t ghcr.io/chrononeko/chronocat:${BUILD_IMAGE_TAG} \
       -t chronoc/at:${BUILD_IMAGE_TAG} \
       .
     ;;
