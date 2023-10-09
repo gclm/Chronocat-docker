@@ -24,7 +24,6 @@ case ${BUILD_MODE} in
         --builder=${BUILD_DOCKER_BUILDER} \
         --build-arg BUILD_BASE_VERSION=${BUILD_BASE_VERSION} \
         --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
-        --build-arg BUILD_CHRONO_CLI_VERSION=${BUILD_CHRONO_CLI_VERSION} \
         --platform ${BUILD_PLATFORM} \
         -t ghcr.io/chrononeko/chronocat:${BUILD_TAG} \
         -t chronoc/at:${BUILD_TAG} \
@@ -36,7 +35,6 @@ case ${BUILD_MODE} in
         --builder=${BUILD_DOCKER_BUILDER} \
         --build-arg BUILD_BASE_VERSION=${BUILD_BASE_VERSION} \
         --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
-        --build-arg BUILD_CHRONO_CLI_VERSION=${BUILD_CHRONO_CLI_VERSION} \
         --platform ${BUILD_PLATFORM} \
         -t ghcr.io/chrononeko/chronocat:${BUILD_TAG} \
         -t ghcr.io/chrononeko/chronocat:latest \
@@ -50,7 +48,6 @@ case ${BUILD_MODE} in
       --builder=${BUILD_DOCKER_BUILDER} \
       --build-arg BUILD_BASE_VERSION=${BUILD_BASE_VERSION} \
       --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
-      --build-arg BUILD_CHRONO_CLI_VERSION=${BUILD_CHRONO_CLI_VERSION} \
       --platform ${BUILD_PLATFORM} \
       -t chronoc/at:${BUILD_TAG} \
       .
