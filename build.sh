@@ -25,7 +25,7 @@ case ${BUILD_MODE} in
         --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
         --platform ${BUILD_PLATFORM} \
         -t ghcr.io/gclm/chronocat:${BUILD_TAG} \
-        -t gclm/chronocat:${BUILD_TAG} \
+        -t gclmit/chronocat:${BUILD_TAG} \
         .
     else
       # 使用给定 Tag 进行构建，同时构建 latest 版本
@@ -36,8 +36,8 @@ case ${BUILD_MODE} in
         --platform ${BUILD_PLATFORM} \
         -t ghcr.io/gclm/chronocat:${BUILD_TAG} \
         -t ghcr.io/gclm/chronocat:latest \
-        -t gclm/chronocat:${BUILD_TAG} \
-        -t gclm/chronocat:latest \
+        -t gclmit/chronocat:${BUILD_TAG} \
+        -t gclmit/chronocat:latest \
         .
     fi
     ;;
@@ -46,7 +46,7 @@ case ${BUILD_MODE} in
       --builder=${BUILD_DOCKER_BUILDER} \
       --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
       --platform ${BUILD_PLATFORM} \
-      -t gclm/chronocat:${BUILD_TAG} \
+      -t gclmit/chronocat:${BUILD_TAG} \
       .
     ;;
 esac
