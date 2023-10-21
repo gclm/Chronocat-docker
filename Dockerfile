@@ -30,7 +30,7 @@ RUN curl -fsSLo /tmp/qqnt.deb https://dldir1.qq.com/qqfile/qq/QQNT/ad5b5393/linu
     # 安装 chronocat-llqqnt
     && mkdir -p /llqqnt/plugins  \
     && cd /llqqnt/plugins  \
-    && curl -fsSLo chronocat.zip https://github.com/gclm/chronocat/releases/download/v${BUILD_CHRONO_VERSION}/LiteLoaderQQNT-Plugin-Chronocat.zip  \
+    && curl -fsSLo chronocat.zip https://github.com/gclm/chronocat/releases/download/v${BUILD_CHRONO_VERSION}/chronocat-llqqnt.zip  \
     && unzip chronocat.zip  \
     && rm chronocat.zip \
     # 创建 chronocat 用户
