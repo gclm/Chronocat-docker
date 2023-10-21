@@ -12,7 +12,7 @@ BUILD_DOCKER_BUILDER=${BUILD_DOCKER_BUILDER:-container}
 
 BUILD_PLATFORM=linux/amd64,linux/arm64
 
-echo "Building chronoc/at:${BUILD_TAG} using builder: ${BUILD_DOCKER_BUILDER}\n\n"
+echo "Building gclm/chronocat:${BUILD_TAG} using builder: ${BUILD_DOCKER_BUILDER}\n\n"
 
 case ${BUILD_MODE} in
   "push")
@@ -22,34 +22,31 @@ case ${BUILD_MODE} in
       docker buildx build \
         --push \
         --builder=${BUILD_DOCKER_BUILDER} \
-        --build-arg BUILD_BASE_VERSION=${BUILD_BASE_VERSION} \
         --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
         --platform ${BUILD_PLATFORM} \
-        -t ghcr.io/chrononeko/chronocat:${BUILD_TAG} \
-        -t chronoc/at:${BUILD_TAG} \
+        -t ghcr.io/gclm/chronocat:${BUILD_TAG} \
+        -t gclm/chronocat:${BUILD_TAG} \
         .
     else
       # 使用给定 Tag 进行构建，同时构建 latest 版本
       docker buildx build \
         --push \
         --builder=${BUILD_DOCKER_BUILDER} \
-        --build-arg BUILD_BASE_VERSION=${BUILD_BASE_VERSION} \
         --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
         --platform ${BUILD_PLATFORM} \
-        -t ghcr.io/chrononeko/chronocat:${BUILD_TAG} \
-        -t ghcr.io/chrononeko/chronocat:latest \
-        -t chronoc/at:${BUILD_TAG} \
-        -t chronoc/at:latest \
+        -t ghcr.io/gclm/chronocat:${BUILD_TAG} \
+        -t ghcr.io/gclm/chronocat:latest \
+        -t gclm/chronocat:${BUILD_TAG} \
+        -t gclm/chronocat:latest \
         .
     fi
     ;;
   *)
     docker buildx build \
       --builder=${BUILD_DOCKER_BUILDER} \
-      --build-arg BUILD_BASE_VERSION=${BUILD_BASE_VERSION} \
       --build-arg BUILD_CHRONO_VERSION=${BUILD_CHRONO_VERSION} \
       --platform ${BUILD_PLATFORM} \
-      -t chronoc/at:${BUILD_TAG} \
+      -t gclm/chronocat:${BUILD_TAG} \
       .
     ;;
 esac
